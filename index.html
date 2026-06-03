@@ -3,7 +3,42 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Anurag Patil — DevOps Cloud Engineer</title>
+<title>Anurag Patil | DevOps Cloud Engineer</title>
+<meta name="description" content="DevOps Cloud Engineer with 3+ years of experience in AWS, Kubernetes, Terraform, Docker, Jenkins, GitOps, and cloud-native infrastructure." />
+<meta name="keywords" content="DevOps Engineer, Cloud Engineer, Kubernetes, AWS, Terraform, Docker, Jenkins, GitOps, CI/CD, Infrastructure Automation" />
+<meta name="author" content="Anurag Patil" />
+<!-- Open Graph -->
+<meta property="og:title" content="Anurag Patil | DevOps Cloud Engineer" />
+<meta property="og:description" content="DevOps Cloud Engineer with 3+ years of experience in AWS, Kubernetes, Terraform, Docker, Jenkins, GitOps, and cloud-native infrastructure." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://anuragpatil.dev" />
+<meta property="og:image" content="https://anuragpatil.dev/preview.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Anurag Patil | DevOps Cloud Engineer" />
+<meta name="twitter:description" content="DevOps Cloud Engineer with 3+ years of experience in AWS, Kubernetes, Terraform, Docker, Jenkins, GitOps, and cloud-native infrastructure." />
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Anurag Patil",
+  "jobTitle": "DevOps Cloud Engineer",
+  "description": "DevOps Cloud Engineer with 3+ years of experience in AWS, Kubernetes, Terraform, Docker, Jenkins, GitOps, and cloud-native infrastructure.",
+  "email": "anurag.patil.devops@gmail.com",
+  "telephone": "+91-9226521573",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/anuragpatil-devops",
+    "https://github.com/AnuragPatil-cloud"
+  ],
+  "knowsAbout": ["AWS", "Kubernetes", "Terraform", "Docker", "Jenkins", "GitOps", "CI/CD", "DevOps", "Cloud Engineering", "Infrastructure as Code"]
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 
 <!-- GSAP + ScrollTrigger + VanillaTilt -->
@@ -389,6 +424,92 @@
     background: rgba(0,229,255,0.05);
   }
 
+  /* PROJECTS */
+  #projects { background: var(--surface); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .project-card:hover::before { transform: scaleX(1); }
+  .project-card:hover {
+    border-color: rgba(0,229,255,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,229,255,0.08);
+  }
+  .project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(0,229,255,0.03) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+  .project-card:hover::after { transform: translateX(100%); }
+  .project-num {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+  .project-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .project-bullets li {
+    display: flex; gap: 0.65rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+  .project-bullets li::before {
+    content: '▸';
+    color: var(--accent);
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    margin-top: 0.15rem;
+  }
+  .project-stack {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: auto;
+  }
+  .project-tag {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    padding: 0.2rem 0.55rem;
+    background: rgba(124,58,237,0.1);
+    border: 1px solid rgba(124,58,237,0.25);
+    border-radius: 2px;
+    color: #a78bfa;
+    letter-spacing: 0.05em;
+  }
+
   /* ABOUT */
   #about { background: var(--surface); }
   .about-grid {
@@ -567,7 +688,7 @@
 
   /* SAFETY NET: if GSAP/ScrollTrigger fails to fire, sections remain visible.
      GSAP uses inline style visibility:hidden via autoAlpha — noscript fallback */
-  .skill-card, .exp-card, .edu-card { visibility: visible !important; }
+  .skill-card, .exp-card, .edu-card, .project-card { visibility: visible !important; }
   /* Hero elements: GSAP sets visibility hidden then animates in.
      We set a max-wait so they always appear after 3s regardless */
   .gsap-loaded #h-tag, .gsap-loaded #h-name, .gsap-loaded #h-role,
@@ -821,6 +942,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -844,7 +966,7 @@
       <span id="typed-role"></span><span class="typing-cursor"></span>
     </p>
     <p class="hero-desc" id="h-desc">
-      3+ years building scalable, containerized microservices on Kubernetes and AWS. I keep systems running, pipelines humming, and dashboards meaningful.
+      Building scalable cloud-native infrastructure, Kubernetes platforms, CI/CD pipelines, and automated deployment systems that power modern applications.
     </p>
     <div class="hero-ctas" id="h-ctas">
       <a href="#experience" class="btn-primary">View Work</a>
@@ -855,15 +977,19 @@
   <div class="hero-stats" id="h-stats">
     <div class="stat" data-tip="Years in DevOps">
       <div class="stat-num" data-count="3" data-suffix="+">0+</div>
-      <div class="stat-label">Years DevOps</div>
+      <div class="stat-label">Years Experience</div>
     </div>
-    <div class="stat" data-tip="Cloud resources managed">
+    <div class="stat" data-tip="AWS resources provisioned & managed">
       <div class="stat-num" data-count="10" data-suffix="+">0+</div>
-      <div class="stat-label">Cloud Resources</div>
+      <div class="stat-label">AWS Resources Managed</div>
     </div>
     <div class="stat" data-tip="Environments maintained">
       <div class="stat-num" data-count="3" data-suffix="">0</div>
-      <div class="stat-label">Environments Managed</div>
+      <div class="stat-label">Environments Maintained</div>
+    </div>
+    <div class="stat" data-tip="System availability target">
+      <div class="stat-num" data-count="99" data-suffix=".9%">0%</div>
+      <div class="stat-label">Availability Support</div>
     </div>
   </div>
 </section>
@@ -895,10 +1021,10 @@
 
     <div class="about-text reveal">
       <p>
-        I've spent the last 3 years in the DevOps space, mostly working on containerized microservices running on Kubernetes and AWS. Day-to-day that means maintaining Jenkins pipelines, writing Terraform modules, debugging pod crashes, and making sure Grafana dashboards actually tell us something useful before something breaks.
+        DevOps Cloud Engineer with 3+ years of experience in designing, automating, and managing cloud-native infrastructure across AWS environments. Experienced in Kubernetes, Docker, Terraform, Jenkins, Ansible, GitOps, CI/CD automation, and production support.
       </p>
       <p>
-        I enjoy the infrastructure side as much as the automation side, and I've gotten pretty good at both. Whether it's provisioning cloud resources at scale or resolving a critical incident within the hour — I thrive in high-ownership environments.
+        Passionate about building scalable infrastructure, automating deployments, improving system reliability, and enabling high-availability cloud-native applications.
       </p>
 
       <div class="about-info">
@@ -907,12 +1033,28 @@
           <span>Pune, Maharashtra</span>
         </div>
         <div class="info-item">
+          <label>Role</label>
+          <span>DevOps Cloud Engineer</span>
+        </div>
+        <div class="info-item">
+          <label>Experience</label>
+          <span>3+ Years</span>
+        </div>
+        <div class="info-item">
           <label>Phone</label>
           <span>+91-9226521573</span>
         </div>
         <div class="info-item">
           <label>Email</label>
           <a href="mailto:anurag.patil.devops@gmail.com">anurag.patil.devops@gmail.com</a>
+        </div>
+        <div class="info-item">
+          <label>LinkedIn</label>
+          <a href="https://www.linkedin.com/in/anuragpatil-devops" target="_blank">linkedin.com/in/anuragpatil-devops</a>
+        </div>
+        <div class="info-item">
+          <label>GitHub</label>
+          <a href="https://github.com/AnuragPatil-cloud" target="_blank">github.com/AnuragPatil-cloud</a>
         </div>
         <div class="info-item">
           <label>Availability</label>
@@ -943,9 +1085,12 @@
         <span class="tag">AWS RDS</span>
         <span class="tag">VPC</span>
         <span class="tag">ALB</span>
-        <span class="tag">Azure AKS</span>
-        <span class="tag">GCP GKE</span>
         <span class="tag">IAM</span>
+        <span class="tag">CloudWatch</span>
+        <span class="tag">Azure AKS</span>
+        <span class="tag">Azure VMs</span>
+        <span class="tag">GCP GKE</span>
+        <span class="tag">GCP Compute</span>
       </div>
     </div>
 
@@ -963,21 +1108,33 @@
         <span class="tag">Deployments</span>
         <span class="tag">HPA</span>
         <span class="tag">Ingress</span>
+        <span class="tag">ConfigMaps</span>
+        <span class="tag">Secrets</span>
       </div>
     </div>
 
     <div class="skill-card reveal" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.12">
       <div class="skill-icon">🔁</div>
-      <div class="skill-cat">CI/CD & Automation</div>
-      <h3>Pipelines & IaC</h3>
+      <div class="skill-cat">CI/CD & GitOps</div>
+      <h3>Pipelines & GitOps</h3>
       <div class="skill-tags">
         <span class="tag">Jenkins</span>
         <span class="tag">GitHub Actions</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">Ansible</span>
-        <span class="tag">CloudFormation</span>
+        <span class="tag">ArgoCD</span>
         <span class="tag">Git</span>
-        <span class="tag">GitHub</span>
+        <span class="tag">GitOps Workflows</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.12">
+      <div class="skill-icon">🏗️</div>
+      <div class="skill-cat">Infrastructure as Code</div>
+      <h3>IaC & Config Mgmt</h3>
+      <div class="skill-tags">
+        <span class="tag">Terraform</span>
+        <span class="tag">CloudFormation</span>
+        <span class="tag">Ansible</span>
+        <span class="tag">Infrastructure Automation</span>
       </div>
     </div>
 
@@ -989,8 +1146,20 @@
         <span class="tag">Prometheus</span>
         <span class="tag">Grafana</span>
         <span class="tag">AWS CloudWatch</span>
+        <span class="tag">SRE Practices</span>
         <span class="tag">Alerting</span>
-        <span class="tag">Dashboards</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.12">
+      <div class="skill-icon">🔐</div>
+      <div class="skill-cat">Security & Secrets</div>
+      <h3>Security & Secrets Mgmt</h3>
+      <div class="skill-tags">
+        <span class="tag">HashiCorp Vault</span>
+        <span class="tag">Kubernetes Secrets</span>
+        <span class="tag">ConfigMaps</span>
+        <span class="tag">IAM Policies</span>
       </div>
     </div>
 
@@ -1020,6 +1189,7 @@
         <span class="tag">DNS</span>
         <span class="tag">HTTP/HTTPS</span>
         <span class="tag">Load Balancing</span>
+        <span class="tag">VPC</span>
       </div>
     </div>
   </div>
@@ -1038,68 +1208,122 @@
     <div class="exp-card active reveal">
       <div class="exp-header">
         <div>
-          <div class="exp-company">BO IT Solutions Pvt. Ltd.</div>
-          <div class="exp-role">DevOps Cloud Engineer</div>
+          <div class="exp-company">BO IT Solutions Private Limited</div>
+          <div class="exp-role">DevOps Engineer</div>
         </div>
         <div class="exp-meta">
-          <div class="exp-period">Mar 2024 — Present</div>
+          <div class="exp-period">Mar 2023 — Present</div>
           <div class="exp-location">📍 Hyderabad, India</div>
         </div>
       </div>
 
+      <p style="font-size:0.9rem; color:#94a3b8; line-height:1.7; margin-bottom:1.25rem;">
+        Worked on a cloud-native microservices platform, automating infrastructure provisioning, CI/CD pipelines, Kubernetes deployments, cloud operations, monitoring, and production support across multiple environments.
+      </p>
+
       <ul class="exp-bullets">
-        <li>Designed and maintained CI/CD pipelines using Jenkins for automated build, test, and deployment across dev and production environments.</li>
-        <li>Built and managed Docker images for application containerization; deployed containerized workloads on Kubernetes (AWS EKS).</li>
-        <li>Created and managed Kubernetes resources — Deployments, Services, Ingress, ConfigMaps, Secrets, HPA — across 3 environments (dev, staging, prod).</li>
-        <li>Performed application deployments using rolling update strategy to achieve minimal downtime during releases.</li>
-        <li>Provisioned and managed AWS infrastructure (EC2, VPC, IAM, S3, RDS, ALB, EKS) using Terraform, managing 10+ cloud resources.</li>
+        <li>Designed and maintained Jenkins CI/CD pipelines for automated build, test, and deployment of applications across development and production environments.</li>
+        <li>Built and managed Docker images for application containerization and deployed containerized workloads on Kubernetes (AWS EKS).</li>
+        <li>Created and managed Kubernetes resources including Deployments, Services, Ingress, ConfigMaps, Secrets, and Horizontal Pod Autoscaler across 3 environments (dev, staging, prod).</li>
+        <li>Performed application deployments using a rolling update strategy to achieve minimal downtime during releases.</li>
+        <li>Provisioned and managed 10+ AWS cloud resources (EC2, VPC, IAM, S3, RDS, ALB, EKS) using Terraform modules, cutting infrastructure provisioning time from 3 days to under 2 hours.</li>
         <li>Automated infrastructure provisioning and configuration management using Terraform and Ansible playbooks.</li>
-        <li>Configured monitoring and alerting using Prometheus, Grafana, and AWS CloudWatch for infrastructure and application health.</li>
+        <li>Managed source code repositories using Git and integrated Git workflows with CI/CD pipelines.</li>
+        <li>Configured monitoring and alerting using Prometheus, Grafana, and AWS CloudWatch for infrastructure and application health monitoring.</li>
         <li>Troubleshot production issues related to Kubernetes pods, container crashes, networking, and deployment failures — resolving critical incidents within 1–2 hours on average.</li>
+        <li>Worked with Linux servers for package installation, user management, process monitoring, permissions, and troubleshooting.</li>
         <li>Managed application configuration and environment variables securely using Kubernetes Secrets and ConfigMaps.</li>
+        <li>Collaborated with development teams to resolve deployment issues and improve release processes.</li>
       </ul>
 
       <div class="exp-expertise">
-        <span class="exp-tag">Microservices</span>
-        <span class="exp-tag">Kubernetes Admin</span>
+        <span class="exp-tag">Kubernetes Administration</span>
+        <span class="exp-tag">AWS Cloud Infrastructure</span>
+        <span class="exp-tag">Terraform</span>
+        <span class="exp-tag">Docker</span>
         <span class="exp-tag">CI/CD Automation</span>
-        <span class="exp-tag">AWS Cloud</span>
-        <span class="exp-tag">Terraform IaC</span>
-        <span class="exp-tag">Monitoring</span>
-        <span class="exp-tag">Linux Admin</span>
+        <span class="exp-tag">GitOps</span>
+        <span class="exp-tag">Monitoring &amp; Observability</span>
+        <span class="exp-tag">Linux Administration</span>
         <span class="exp-tag">Production Support</span>
+        <span class="exp-tag">Microservices</span>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Hisan Labs -->
-    <div class="exp-card reveal">
-      <div class="exp-header">
-        <div>
-          <div class="exp-company">Hisan Labs</div>
-          <div class="exp-role">DevOps Engineer (Intern)</div>
-        </div>
-        <div class="exp-meta">
-          <div class="exp-period">Mar 2023 — Jan 2024</div>
-          <div class="exp-location">📍 Pune, Maharashtra</div>
-        </div>
-      </div>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
 
-      <ul class="exp-bullets">
-        <li>Provisioned and managed cloud infrastructure using Terraform on AWS (EC2, S3), enabling scalable and repeatable deployments.</li>
-        <li>Troubleshot and maintained Linux-based servers, improving system reliability and performance.</li>
-        <li>Collaborated with cross-functional teams to resolve deployment issues, enhancing application uptime and delivery speed.</li>
-        <li>Managed source code using Git and GitHub, enabling version control and team collaboration.</li>
-        <li>Containerized applications using Docker, ensuring consistent environments across development, testing, and production.</li>
-        <li>Deployed and managed applications on Kubernetes (EKS), handling pods, services, and rolling updates.</li>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-num">PROJECT // 01</div>
+      <h3>Cloud-Native CRM Platform</h3>
+      <ul class="project-bullets">
+        <li>Built scalable microservices infrastructure on AWS EKS.</li>
+        <li>Automated infrastructure provisioning using Terraform modules.</li>
+        <li>Implemented Jenkins CI/CD pipelines for continuous deployment.</li>
+        <li>Managed Docker container lifecycle across environments.</li>
+        <li>Integrated Prometheus and Grafana monitoring and alerting.</li>
+        <li>Achieved highly available deployments across multiple environments.</li>
       </ul>
+      <div class="project-stack">
+        <span class="project-tag">AWS</span>
+        <span class="project-tag">Kubernetes</span>
+        <span class="project-tag">Docker</span>
+        <span class="project-tag">Jenkins</span>
+        <span class="project-tag">Terraform</span>
+        <span class="project-tag">Prometheus</span>
+        <span class="project-tag">Grafana</span>
+      </div>
     </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">PROJECT // 02</div>
+      <h3>Infrastructure Automation Framework</h3>
+      <ul class="project-bullets">
+        <li>Developed reusable Terraform modules for consistent deployments.</li>
+        <li>Automated VPC, EKS, IAM, ALB, and RDS provisioning end-to-end.</li>
+        <li>Reduced manual provisioning efforts and configuration drift significantly.</li>
+        <li>Standardized infrastructure deployments across all environments.</li>
+      </ul>
+      <div class="project-stack">
+        <span class="project-tag">Terraform</span>
+        <span class="project-tag">AWS</span>
+        <span class="project-tag">Ansible</span>
+        <span class="project-tag">GitHub</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">PROJECT // 03</div>
+      <h3>GitOps Deployment Platform</h3>
+      <ul class="project-bullets">
+        <li>Implemented ArgoCD-based GitOps deployment workflows on Kubernetes.</li>
+        <li>Automated Kubernetes application synchronization from Git repositories.</li>
+        <li>Improved deployment consistency and rollback capabilities across clusters.</li>
+      </ul>
+      <div class="project-stack">
+        <span class="project-tag">ArgoCD</span>
+        <span class="project-tag">Kubernetes</span>
+        <span class="project-tag">GitHub</span>
+        <span class="project-tag">Helm</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-header reveal">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <h2 class="section-title">Education</h2>
     <div class="section-line"></div>
   </div>
@@ -1133,15 +1357,15 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header reveal">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2 class="section-title">Contact</h2>
     <div class="section-line"></div>
   </div>
 
   <div class="contact-grid">
     <div class="contact-intro reveal">
-      <h2>Let's build something reliable together.</h2>
-      <p>Open to DevOps, Cloud, and SRE roles. If you're looking for someone who owns infrastructure end-to-end and ships with confidence — let's talk.</p>
+      <h2>Let's Build Reliable Cloud Infrastructure Together.</h2>
+      <p>Interested in DevOps, Cloud Engineering, Kubernetes, Infrastructure Automation, or Platform Engineering opportunities? Let's connect and discuss how I can contribute to your team.</p>
     </div>
 
     <div class="contact-links reveal">
@@ -1187,7 +1411,7 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2025 Anurag Patil. Built from scratch.</p>
-  <p>DevOps Cloud Engineer · Pune, India</p>
+  <p>DevOps Cloud Engineer · Pune, Maharashtra</p>
 </footer>
 
 <script>
@@ -1204,7 +1428,7 @@ document.body.classList.add('gsap-loaded');
 // force all sections visible after 3s
 setTimeout(function() {
   var safeEls = document.querySelectorAll(
-    '#h-tag,#h-name,#h-role,#h-desc,#h-ctas,#h-stats,.skill-card,.exp-card,.edu-card,.contact-link'
+    '#h-tag,#h-name,#h-role,#h-desc,#h-ctas,#h-stats,.skill-card,.exp-card,.edu-card,.contact-link,.project-card'
   );
   safeEls.forEach(function(el) {
     el.style.opacity    = el.style.opacity    || '1';
@@ -1471,6 +1695,16 @@ gsap.registerPlugin(ScrollTrigger);
     }
   );
 
+  // Project cards — stagger up
+  document.querySelectorAll('.project-card.reveal').forEach(el => el.classList.remove('reveal'));
+  gsap.fromTo('.project-card',
+    { autoAlpha: 0, y: 60 },
+    {
+      scrollTrigger: { trigger: '#projects', start: 'top 85%', once: true },
+      autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.8, ease: 'power3.out'
+    }
+  );
+
   // Contact links — slide from right
   gsap.from('.contact-link', {
     scrollTrigger: { trigger: '#contact', start: 'top 85%', once: true },
@@ -1529,11 +1763,11 @@ gsap.registerPlugin(ScrollTrigger);
 // ── TYPING ANIMATION ───────────────────────────────────
 (function initTyping() {
   const roles = [
-    'Kubernetes & AWS Infrastructure',
-    'CI/CD Automation Engineer',
-    'Cloud-Native Deployments',
-    'DevOps Problem Solver',
-    'Infrastructure as Code'
+    'DevOps Engineer',
+    'Cloud Engineer',
+    'Kubernetes Administrator',
+    'AWS Engineer',
+    'Infrastructure Automation Specialist'
   ];
   const el = document.getElementById('typed-role');
   if (!el) return;
