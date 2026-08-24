@@ -1245,13 +1245,13 @@
           <div class="exp-role">Junior DevOps Engineer</div>
         </div>
         <div class="exp-meta">
-          <div class="exp-period">Apr 2023 — Present</div>
+          <div class="exp-period">Mar 2023 — Present</div>
           <div class="exp-location">📍 Hyderabad, India (Hybrid)</div>
         </div>
       </div>
 
       <p style="font-size:0.9rem; color:#94a3b8; line-height:1.7; margin-bottom:1.25rem;">
-        Progressed from DevOps Engineer Intern (Apr 2023 – Feb 2024) to Junior DevOps Engineer (Mar 2024 – Present), automating cloud infrastructure, CI/CD pipelines, and Kubernetes platforms on AWS while improving production observability across 15+ microservices.
+        Progressed from DevOps Engineer Intern (Mar 2023 – Aug 2023) to Junior DevOps Engineer (Sept 2023 – Present), automating cloud infrastructure, CI/CD pipelines, and Kubernetes platforms on AWS while improving production observability across 15+ microservices.
       </p>
 
       <ul class="exp-bullets">
@@ -1299,19 +1299,18 @@
 
     <div class="project-card reveal">
       <div class="project-num">PROJECT // 01</div>
-      <h3>Cloud-Native Microservices Platform on AWS EKS</h3>
+      <h3>GitOps CI/CD Pipeline for Kubernetes Microservices</h3>
       <ul class="project-bullets">
-        <li>Reduced infrastructure provisioning time by 95% (3 days to 8 hours) by building Terraform modules covering EC2, EKS, RDS, ALB, VPC, IAM, S3, and Route 53.</li>
-        <li>Cut deployment failure rate from 18% to under 6% by building Jenkins and GitHub Actions pipelines with Docker build/push and Kubernetes rolling deployments across 3 environments.</li>
+        <li>Eliminated manual Kubernetes deployments by designing an end-to-end GitOps pipeline for a 5-service microservices application (Python/Flask, .NET, Node.js, Redis, PostgreSQL) using Azure Pipelines for CI and ArgoCD for automated sync to AKS.</li>
+        <li>Cut per-service pipeline code by ~75% by consolidating 3 duplicated CI pipelines into a single parameterized Azure Pipelines template, reducing each service's pipeline definition from ~75 lines to ~20.</li>
       </ul>
       <div class="project-stack">
-        <span class="project-tag">Terraform</span>
-        <span class="project-tag">AWS EKS</span>
+        <span class="project-tag">Azure DevOps Pipelines</span>
         <span class="project-tag">Docker</span>
-        <span class="project-tag">Kubernetes</span>
-        <span class="project-tag">Jenkins</span>
-        <span class="project-tag">Helm</span>
-        <span class="project-tag">Ansible</span>
+        <span class="project-tag">Kubernetes (AKS)</span>
+        <span class="project-tag">ArgoCD</span>
+        <span class="project-tag">Kustomize</span>
+        <span class="project-tag">Bash</span>
       </div>
     </div>
 
@@ -1333,22 +1332,21 @@
 
     <div class="project-card reveal">
       <div class="project-num">PROJECT // 03</div>
-      <h3>Flight Reservation System Deployment on AWS</h3>
+      <h3>Full-Stack Blogging Application — CI/CD Pipeline on AWS EKS</h3>
       <ul class="project-bullets">
-        <li>Deployed a full-stack Flight Reservation System on AWS EC2 (Ubuntu) by provisioning the server environment and configuring the MySQL database and Apache2 web server for production hosting.</li>
-        <li>Established secure database connectivity by installing and configuring MySQL Server, creating the application database with appropriate user privileges, and validating end-to-end connectivity.</li>
-        <li>Ensured reliable end-to-end operation by managing Linux server administration — including package installation, service management, and file permissions — and validating successful communication between application components.</li>
+        <li>Automated an 11-stage CI/CD pipeline by building a Jenkins pipeline integrating Maven builds, Trivy security scanning, SonarQube quality gates, and Nexus artifact publishing ahead of containerized deployment to AWS EKS.</li>
+        <li>Provisioned production-grade AWS infrastructure by building a 3-node EKS cluster from scratch with Terraform (VPC, subnets, IAM roles, node groups) and scoping Kubernetes CI access to a namespace-limited ServiceAccount instead of cluster-admin.</li>
       </ul>
       <div class="project-stack">
-        <span class="project-tag">AWS EC2</span>
-        <span class="project-tag">Linux</span>
-        <span class="project-tag">Java</span>
-        <span class="project-tag">Spring Boot</span>
-        <span class="project-tag">MySQL</span>
-        <span class="project-tag">Maven</span>
-        <span class="project-tag">Node.js</span>
-        <span class="project-tag">Apache2</span>
-        <span class="project-tag">Git</span>
+        <span class="project-tag">Java (Spring Boot)</span>
+        <span class="project-tag">Terraform</span>
+        <span class="project-tag">AWS EKS</span>
+        <span class="project-tag">Docker</span>
+        <span class="project-tag">Kubernetes</span>
+        <span class="project-tag">Jenkins</span>
+        <span class="project-tag">SonarQube</span>
+        <span class="project-tag">Nexus</span>
+        <span class="project-tag">Trivy</span>
       </div>
     </div>
 
@@ -1382,7 +1380,7 @@
         </div>
         <div class="edu-detail">
           <label>Certifications</label>
-          <span>AWS Certified Cloud Practitioner – Essentials (Mar 2026), AWS Cloud Quest: Cloud Practitioner (Mar 2026)</span>
+          <span>AWS Certified Cloud Practitioner – Essentials, AWS Cloud Quest: Cloud Practitioner, Azure Badges (10+), Introduction to Linux (LFS101), Introduction to Kubernetes (LFS158)</span>
         </div>
         <div class="edu-detail">
           <label>In Progress</label>
