@@ -19,7 +19,7 @@ Built with pure HTML, CSS, and JavaScript. No frameworks, no dependencies.
 - **Hero** — Introduction and quick stats
 - **About** — Summary and contact info
 - **Skills** — Cloud, Containers, CI/CD, Monitoring, Scripting, Databases
-- **Experience** — BO IT Solutions & Hisan Labs
+- **Experience** —PENTAGRAM INFOTECH 
 - **Education** — DBATU University
 - **Contact** — Email, Phone, LinkedIn, GitHub
 
