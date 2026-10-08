@@ -207,7 +207,6 @@ PROJECTS = [
      ["Python", "LangChain", "LangGraph", "Google Gemini", "MCP", "AWS CLI"]),
 ]
 
-
 def project_card(i, title, bullets, stack):
     li = "\n".join(f"        <li>{esc(b)}</li>" for b in bullets)
     tags = "\n".join(f'        <span class="project-tag">{esc(t)}</span>' for t in stack)
